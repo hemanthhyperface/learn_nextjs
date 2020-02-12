@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Head from 'next/head'
 
 import Example from '../components/menu';
+import SearchBar from '../components/searchbar';
 import Nav from '../components/nav'
 import Card from '../components/card'
 import fetch from 'isomorphic-unfetch';
@@ -22,10 +23,12 @@ const Dashboard = (props) => (
       />
        
     </Head>
+    <Example>  </Example>
+    <SearchBar></SearchBar>
     <div className="row">
    <div className="col-md-1">
-    <Example>  </Example>
     </div>
+    
     <div className="col-md-9">
     {props.shows.map(show => (
         <Card key={show.title} title={show.title} description={show.description} image={show.urlToImage} url={show.url}></Card>
